@@ -1,0 +1,35 @@
+pipeline{
+agent any
+tools{
+maven 'maven3.9.11'
+    }
+    stages{
+      stage('CheckoutCode'){
+        steps{
+            git branch: 'development', credentialsId: 'fc1e8314-bec2-447a-981c-0cab779e20fc', url: 'https://github.com/kvamsikrishna2411-del/maven-web-application.git'
+        }
+      }
+    stage('Build'){
+     steps{
+     sh "mvn clean package"    
+     }
+    }
+    stage('ExecuteSonarQube'){
+     steps{
+     sh "mvn clean sonar:sonar"     
+     }    
+    }
+    stage('UploadArtifactsintoNexus'){
+     steps{
+     sh "mvn clean deploy"     
+     }    
+    }
+    stage('DeployAPPintoTomcat'){
+     steps{
+     sshagent(['511f763f-2f30-4731-8811-29c4d65c8dbd']) {
+     sh "scp -o StrictHostkeyChecking=no target/maven-web-application.war ec2-user@3.109.200.222:/opt/tomcat9/webapps/"
+     }    
+    }
+   }
+ }
+} 
