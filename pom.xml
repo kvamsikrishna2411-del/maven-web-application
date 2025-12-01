@@ -92,23 +92,22 @@
 		</dependency>
 		
 	</dependencies>
-	
-	<distributionManagement>
+     <distributionManagement>
 
-		<SnapshotRepository>
-	      <id>nexus</id>
-	      <name>Wallmart-Snapshot</name>
-	      <url>http://13.201.229.216:8081/repository/Wallmart-Snapshot/</url>
-	    </SnapshotRepository>
-		
-	   <Repository>
-	      <id>nexus</id>
-	      <name>Wallmart-Snapshot</name>
-	      <url>http://13.201.229.216:8081/repository/Wallmart-Release/</url>
-	    </Repository>
-		
-	</distributionManagement>
-	
+            <repository>
+              <id>nexus</id>
+              <name>Wallmart-Snapshot</name>
+              <url>http://13.201.229.216:8081/repository/Wallmart-Snapshot/</url>
+            </repository>
+
+            <snapshotRepository>
+              <id>nexus</id>
+              <name>Wallmart-Release</name>
+              <url>http://13.201.229.216:8081/repository/Wallmart-Release/</url>
+            </snapshotRepository>
+
+        </distributionManagement>
+
 	<build>
 		<finalName>maven-web-application</finalName>
 		
