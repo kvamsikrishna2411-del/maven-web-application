@@ -94,18 +94,18 @@
 	</dependencies>
 	
 	<distributionManagement>
-	
+
+       <snapshotRepository>
+	      <id>nexus</id>
+	      <name>Wallmart-Snapshot</name>
+	      <url>http://43.204.142.235:8081/repository/Wallmart-Snapshot/</url>
+	    </snapshotRepository>     
+
 	    <repository>
 	      <id>nexus</id>
 	      <name>Wallmart-Release</name>
 	      <url>http://43.204.142.235:8081/repository/Wallmart-Release/</url>
 	    </repository>
-	    
-	    <snapshotRepository>
-	      <id>nexus</id>
-	      <name>Wallmart-Snapshot</name>
-	      <url>http://43.204.142.235:8081/repository/Wallmart-Snapshot/</url>
-	    </snapshotRepository>
 	    
 	</distributionManagement>
 	
