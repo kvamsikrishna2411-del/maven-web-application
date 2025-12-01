@@ -94,13 +94,18 @@
 	</dependencies>
 	
 	<distributionManagement>
+
+		<SnapshotRepository>
+	      <id>nexus</id>
+	      <name>Wallmart-Snapshot</name>
+	      <url>http://13.201.229.216:8081/repository/Wallmart-Snapshot/</url>
+	    </SnapshotRepository>
 		
-	   <snapshotRepository>
+	   <Repository>
 	      <id>nexus</id>
 	      <name>Wallmart-Snapshot</name>
 	      <url>http://13.201.229.216:8081/repository/Wallmart-Release/</url>
-	    </snapshotRepository>
-		
+	    </Repository>
 		
 	</distributionManagement>
 	
